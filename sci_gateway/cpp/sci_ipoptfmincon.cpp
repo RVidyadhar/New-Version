@@ -40,14 +40,14 @@ int sci_solveminconp(char *fname)
 	int* funptr=NULL;
 	int* gradhesptr=NULL;
 	double *x0ptr=NULL, *lbptr=NULL, *ubptr=NULL,*Aptr=NULL, *bptr=NULL, *Aeqptr=NULL, *beqptr=NULL;
-	double flag1=0,flag2=0,flag3=0,nonlinCon=0,nonlinIneqCon=0;
+	static unsigned double flag1=0,flag2=0,flag3=0,nonlinCon=0,nonlinIneqCon=0;
         
 
     	// Input arguments
 	double *cpu_time=NULL,*max_iter=NULL;
 	static unsigned int nVars = 0,nCons = 0;
 	unsigned int temp1 = 0,temp2 = 0, iret = 0;
-	int x0_rows=0, x0_cols=0, lb_rows=0, lb_cols=0, ub_rows=0, ub_cols=0, A_rows=0, A_cols=0, b_rows=0, b_cols=0, Aeq_rows=0, Aeq_cols=0, beq_rows=0, beq_cols=0;
+	unsigned int x0_rows=0, x0_cols=0, lb_rows=0, lb_cols=0, ub_rows=0, ub_cols=0, A_rows=0, A_cols=0, b_rows=0, b_cols=0, Aeq_rows=0, Aeq_cols=0, beq_rows=0, beq_cols=0;
 	
 	// Output arguments
 	double *fX = NULL, ObjVal=0,iteration=0,cpuTime=0,fobj_eval=0;
@@ -192,7 +192,13 @@ int sci_solveminconp(char *fname)
 	 app->Statistics()->Infeasibilities(dual_inf, constr_viol, complementarity, kkt_error);
 	 rstatus = Prob->returnStatus();
 	 fobj_eval=(double)int_fobj_eval;
-         
+     cout<<"obj eval address"<<&int_fobj_eval;    
+	 cout<<"double obj eval address"<<&fobj_eval;
+	 cout<<"dual inf address"<<&dual_inf;
+	 cout<<"cpu time address"<<&cpuTime;
+	 cout<<"rstatus address"<<&rstatus;
+	
+	
 	////////// Manage the output argument //////////
 
 	fX = Prob->getX();
@@ -203,7 +209,15 @@ int sci_solveminconp(char *fname)
 	fZu = Prob->getZu();
 	ObjVal = Prob->getObjVal();
 	iteration = Prob->iterCount();
-
+	cout<<"x address"<<fX;
+	cout<<"gradient address"<<&fGrad;
+	cout<<"Hessian address"<<&fHess;
+	cout<<"Lambda address"<<&fLambda;
+	cout<<"Zl address"<<&fZl;
+	cout<<"Zu address"<<&fZu;
+	cout<<"Obj Address"<<&ObjVal;
+	cout<<"iterations address"<<&iteration;
+	
 	if (returnDoubleMatrixToScilab(1, 1, nVars, fX))
 	{
 		return 1;

@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book [
 <!--Begin Entities-->
-<!ENTITY a3bd2111ca369d68e2fef3ccda09e04ff SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/fminbnd.xml">
-<!ENTITY ae910445291a0fab69836e5610a1f9f6b SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/fmincon.xml">
-<!ENTITY a275fe88e2c34e1ae961f173914432d87 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/fminunc.xml">
-<!ENTITY ac1958aae330d064cf51cc120b0cd657b SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/lsqlin.xml">
-<!ENTITY a86a41713a28dfd3fa6981058ad46213d SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/qpipopt.xml">
-<!ENTITY abb02223c55717d46836267e438149aa2 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/qpipopt_mat.xml">
-<!ENTITY a633c5868e7ab761a5507d769a75622e5 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/qpipoptmat.xml">
-<!ENTITY a76b73f1ca4b5bbdfa08c9ff60675d3b6 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/setOptions.xml">
-<!ENTITY a3756cfa581f8a9211c03ebe1ca773d6f SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/symphony.xml">
-<!ENTITY a6ea66071058c04c71d53f054210a5a8b SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/symphony_call.xml">
-<!ENTITY a58069569181c8ded04eaf96cc7aca6dd SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/symphony_mat.xml">
-<!ENTITY ad47bf10b98ec861a9ae3087f7e9a3d80 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/symphonymat.xml">
-<!ENTITY a13de76afe3b5c2d0b3f8ea8e0a3dd08e SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_addConstr.xml">
-<!ENTITY ab0390ba610afb8f9910257651b6127dc SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_addVar.xml">
-<!ENTITY a719afab4ea4beef8c7c4b1a1edff4b5d SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_close.xml">
-<!ENTITY ada2e8f5591a904c36974a842fc0ef298 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_deleteConstrs.xml">
-<!ENTITY a78793b9c9d3e26576697d1889dca7123 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_deleteVars.xml">
-<!ENTITY a64a94ee786e6d55c998096d7f530b62e SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getConstrActivity.xml">
-<!ENTITY a352c5188af2c66de613397b2c108d410 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getConstrLower.xml">
-<!ENTITY ad8d527ecac84612cac234f4fe820fae7 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getConstrRange.xml">
-<!ENTITY a45f1a7429f8b8f3acab98a0a4f2d8500 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getConstrSense.xml">
-<!ENTITY a8cd41f1e239e7c254fd4ad6199675f52 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getConstrUpper.xml">
-<!ENTITY af371a97897bca9227ddf0b255b55e2a3 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getDblParam.xml">
-<!ENTITY a942dab352ceb24cd2abe69855de78d59 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getInfinity.xml">
-<!ENTITY ad76a497582e7acfbb1ea64c7ba7fa000 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getIntParam.xml">
-<!ENTITY a65495d0f71d3816fe61629c1d080fcd4 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getIterCount.xml">
-<!ENTITY ae30ddf6f4b2e25466090151a422ab812 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getMatrix.xml">
-<!ENTITY a7171e89a4c00456efab773f03e3f9049 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getNumConstr.xml">
-<!ENTITY a8c178977215671c68bd81579465e5260 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getNumElements.xml">
-<!ENTITY a4577c23788738bc4b2b9fa7aaefeef4f SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getNumVar.xml">
-<!ENTITY a83c19028524250a070d975ee8c7cf97a SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getObjCoeff.xml">
-<!ENTITY a77bb465667e90f7268e378c5728c64dd SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getObjSense.xml">
-<!ENTITY a46bab685bda0889b0cf669e6143437a7 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getObjVal.xml">
-<!ENTITY a88c3c27ee52e7357167b8ec048715179 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getPrimalBound.xml">
-<!ENTITY a4f98d707d4298654c3c4eeac9a8b6f0c SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getRhs.xml">
-<!ENTITY a40e1551f024f7eadd1241a4b52a6d659 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getStatus.xml">
-<!ENTITY a208aa41cad211d98bb4fe9358449337a SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getStrParam.xml">
-<!ENTITY a0f249667fe906ed62cfe394296974465 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getVarLower.xml">
-<!ENTITY adc19a276483993422aa038c1b2132495 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getVarSoln.xml">
-<!ENTITY a00953e66bf4aef61f6b6b43280c50596 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_getVarUpper.xml">
-<!ENTITY a026ce7878cd3c99c48b4542357b33a41 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isAbandoned.xml">
-<!ENTITY ab6873195bbc7c0ebf92daa44e9a2d5d6 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isBinary.xml">
-<!ENTITY a30b54019f094f2997fdd38015b256593 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isContinuous.xml">
-<!ENTITY a42df6b115b51a60e111655933e627413 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isEnvActive.xml">
-<!ENTITY a9ee4ef2493cd384b82982dab6cf90665 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isInfeasible.xml">
-<!ENTITY aaea82f3cde3dfe832010a912f6df59b1 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isInteger.xml">
-<!ENTITY ac3ca5984e1e5f6f796faa3aaeb7bd5c0 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isIterLimitReached.xml">
-<!ENTITY a5916338e4dbd097dc20ca7787207ca09 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isOptimal.xml">
-<!ENTITY a8be49e94c83d005d42774ba9e8c886ca SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isTargetGapAchieved.xml">
-<!ENTITY acc4d6cc54b7eb2e4474d107fc4817f12 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_isTimeLimitReached.xml">
-<!ENTITY a9aab966caec55c30352cfe869ff12082 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_loadMPS.xml">
-<!ENTITY a73e01cd76ee14c201ac0f2d20572a68f SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_loadProblem.xml">
-<!ENTITY a443f260ade97d4b8121969ff07a5d58c SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_loadProblemBasic.xml">
-<!ENTITY aa8da4846ca276a44e43bddb55c4cb719 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_open.xml">
-<!ENTITY a65fc7bb4e1025a7f26a41c84906e8f5b SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_resetParams.xml">
-<!ENTITY aaf9f87e80522d0271fdc4b5a5f4b87a8 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setConstrLower.xml">
-<!ENTITY ae5d88877c03a7dd8f5dedd4cdb44bb2d SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setConstrType.xml">
-<!ENTITY aa58e5af001a750ec656986ff6607a796 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setConstrUpper.xml">
-<!ENTITY a65b03d7ba5c9e56ba6b2d89813fbe009 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setContinuous.xml">
-<!ENTITY a518d286bb113c4964a7a48cdbc0d8817 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setDblParam.xml">
-<!ENTITY aff673dc84f17566670176dd60931d7ad SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setIntParam.xml">
-<!ENTITY a57c41f201559e79560b802c541484ede SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setInteger.xml">
-<!ENTITY a048729d3d19d52728a0045ac330a934e SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setObjCoeff.xml">
-<!ENTITY ade6001496ab7c18c677fd4836926009a SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setObjSense.xml">
-<!ENTITY a00abbeb11bc9d949b732423be5d9c549 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setPrimalBound.xml">
-<!ENTITY af50ba4e3b9c04bfe029b3ab18c30bb30 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setStrParam.xml">
-<!ENTITY ae9b9ccb70c0f1866f18a7479dbf834da SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setVarLower.xml">
-<!ENTITY ae144802e5cbdc335fc8b14f880862000 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setVarSoln.xml">
-<!ENTITY a3debab8f1b5b68b568ee0cf418a8b8f0 SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_setVarUpper.xml">
-<!ENTITY a9a348d464dc2839a7dc3c96eb3a49a4c SYSTEM "/home/rvd/Desktop/New-rep/symphony-master/help/en_US/Symphony Native Function/sym_solve.xml">
+<!ENTITY ac222d84ebbf9569418008cc186599720 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/fminbnd.xml">
+<!ENTITY a8a06133d30c53a074347baae450615aa SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/fmincon.xml">
+<!ENTITY ac1e1527a10c912e769f8031255868119 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/fminunc.xml">
+<!ENTITY ac0eb17a050862944ddd02c15e46d5000 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/lsqlin.xml">
+<!ENTITY a28de84a6deec4b0b5c72c351575599a0 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/qpipopt.xml">
+<!ENTITY aecce91e19ac32dbcbe0e9c7885c70686 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/qpipopt_mat.xml">
+<!ENTITY a4938bfb4aef71a62c0d705e6fbc6628e SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/qpipoptmat.xml">
+<!ENTITY a75bfa214155f5a3034a26a92df35b750 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/setOptions.xml">
+<!ENTITY a0663c479c4a611bd139fdc0800feb739 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/symphony.xml">
+<!ENTITY a99fa0a61fe65c82077e3b6758d8cf015 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/symphony_call.xml">
+<!ENTITY ad7db98ad06686249e4bcc70b79be79c4 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/symphony_mat.xml">
+<!ENTITY a7826b794e53d9d3293fd7345bf6e3af4 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/symphonymat.xml">
+<!ENTITY af9889d4d82d614ffb2228873727ae7fc SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_addConstr.xml">
+<!ENTITY a9e714f002b8f770838d5ff39815cf824 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_addVar.xml">
+<!ENTITY a9f1ec895c2cfd92f863fe52c3059ec9c SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_close.xml">
+<!ENTITY ab1aab73e20e608bdb83aa3c831ce21d3 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_deleteConstrs.xml">
+<!ENTITY aff37e812328d06bbf4e8372ce4e0b413 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_deleteVars.xml">
+<!ENTITY a21bfd37b4cf8b12c0fc1c2fe31544250 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getConstrActivity.xml">
+<!ENTITY a7b668683ab2c4a527a33dfc614667b67 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getConstrLower.xml">
+<!ENTITY ab828a1daca6403f345c241660c8871d6 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getConstrRange.xml">
+<!ENTITY a6119e0fcde8d6db54559b3c3dcfad0f4 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getConstrSense.xml">
+<!ENTITY a8b59cb516ead31cb1d8658e4ea946da1 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getConstrUpper.xml">
+<!ENTITY aea238954434eddf45147df658de44a72 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getDblParam.xml">
+<!ENTITY a5631dee0b479276c27a273beed20e9be SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getInfinity.xml">
+<!ENTITY abdc73fd17be2539db66026c8a30f783f SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getIntParam.xml">
+<!ENTITY a56773797544f5d53159157605db7e751 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getIterCount.xml">
+<!ENTITY a6c8c4d563f6c12f9b2e5d50f7456aaf0 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getMatrix.xml">
+<!ENTITY aaf38f31d408577658cbe4853cfdaad0b SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getNumConstr.xml">
+<!ENTITY ac6046fe9e6f9f75c9697e76a34cce2ac SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getNumElements.xml">
+<!ENTITY afa6774bb9d538cd64accf22b0d8de38c SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getNumVar.xml">
+<!ENTITY aa87e3ac32fc9fd4f99e3f55f11d6edc6 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getObjCoeff.xml">
+<!ENTITY a64c40f78b538f22661a4b3a58d409611 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getObjSense.xml">
+<!ENTITY a3219e27f1f9f3d0e8706585e358fbdd4 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getObjVal.xml">
+<!ENTITY acbb8fcddad7005e2e827e9c742158215 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getPrimalBound.xml">
+<!ENTITY a3ec304d90d2e6e4cba96b998362bb1b4 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getRhs.xml">
+<!ENTITY aa294b4ca432485a7257ccb628c9cf3cf SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getStatus.xml">
+<!ENTITY a87177b629bb870c4530ec848096218d0 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getStrParam.xml">
+<!ENTITY a2af74fac363f7307cce56d667617b215 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getVarLower.xml">
+<!ENTITY ab014a8a3e97f606f6aa5ec34fb9addce SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getVarSoln.xml">
+<!ENTITY a0890bf3462f3bbfdd1d2f706353e6b71 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_getVarUpper.xml">
+<!ENTITY aa47f7237860dbff8208c9b10515adbad SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isAbandoned.xml">
+<!ENTITY a0cd75524805301c479f25f2fe0e939bd SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isBinary.xml">
+<!ENTITY ad84c516b52059f8e17320d249e46c684 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isContinuous.xml">
+<!ENTITY a14f6070c8a036c693c4b2e3ce2492279 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isEnvActive.xml">
+<!ENTITY a728983ec0c43df15dbc7421b760b8031 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isInfeasible.xml">
+<!ENTITY a0aa156af51f136ebae1956d00df9661d SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isInteger.xml">
+<!ENTITY a94da2eb036eeba9522f89a3f320a4882 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isIterLimitReached.xml">
+<!ENTITY a49ab2cd10b4bc51974550fc7b05fd570 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isOptimal.xml">
+<!ENTITY ab4717f97b14e0bc67b936564aa505ad8 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isTargetGapAchieved.xml">
+<!ENTITY a5f0134cc8044917a0c396fd88d2d95c8 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_isTimeLimitReached.xml">
+<!ENTITY aa1c5aa3f6a4aefa6e4f160476d72a1c8 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_loadMPS.xml">
+<!ENTITY ae9e0b601c2cfb4f09367c1755b2bc5b6 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_loadProblem.xml">
+<!ENTITY aa492d138cb247ffe64bb1c024098bf08 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_loadProblemBasic.xml">
+<!ENTITY a61781530c57d8ac6b218fddca29f6ea9 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_open.xml">
+<!ENTITY a5cd5f48c98f9650b60d9b465a695451d SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_resetParams.xml">
+<!ENTITY aa11cefc47a81a180dad6da798f863c65 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setConstrLower.xml">
+<!ENTITY ab27a53ddf8fff9fb6418369e27b435ad SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setConstrType.xml">
+<!ENTITY af710238176bc6f27ff5e6b7b44ce64a0 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setConstrUpper.xml">
+<!ENTITY af0c39afb036f1e5ebb0a6f10eeb6addd SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setContinuous.xml">
+<!ENTITY a76364466ebaf39a07a53712fef270bf1 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setDblParam.xml">
+<!ENTITY afbf8293befa2d9ee7192ec0d97902e6f SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setIntParam.xml">
+<!ENTITY a67ac82d3f062eac12355b3b210709c8b SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setInteger.xml">
+<!ENTITY a3643c422fb0c07b8db8b9cbdb36f7302 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setObjCoeff.xml">
+<!ENTITY a38f6aad99d55b0010602cb39bd28aa8b SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setObjSense.xml">
+<!ENTITY a9c6f1eb7ebb613d5609b1ea39ff0ef01 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setPrimalBound.xml">
+<!ENTITY a0edecf2158e8474bf7892f9044856233 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setStrParam.xml">
+<!ENTITY a0a4ff2084c62d4ee21e2927890e78ded SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setVarLower.xml">
+<!ENTITY a869bde1f9eb2748984045e306d6f3606 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setVarSoln.xml">
+<!ENTITY ac73405bedf21babde8716105dcd48c33 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_setVarUpper.xml">
+<!ENTITY a32ee0832e1c29f24ddd6541d2d6bf3d3 SYSTEM "/home/rvd/Desktop/New-Version/help/en_US/Symphony Native Function/sym_solve.xml">
 <!--End Entities-->
 ]>
 <book version="5.0-subset Scilab" xml:lang="en_US"
@@ -85,80 +85,80 @@
     <title>Symphony Toolbox</title>
   </info>
 
-<part xml:id='section_0668c8d3b1fcce7c887f74c9a675937b'>
+<part xml:id='section_4130b9870f2cc3a0a8a90fa5c8f26baf'>
 <title>Symphony Toolbox</title>
-&a3bd2111ca369d68e2fef3ccda09e04ff;
-&ae910445291a0fab69836e5610a1f9f6b;
-&a275fe88e2c34e1ae961f173914432d87;
-&ac1958aae330d064cf51cc120b0cd657b;
-&a86a41713a28dfd3fa6981058ad46213d;
-&abb02223c55717d46836267e438149aa2;
-&a633c5868e7ab761a5507d769a75622e5;
-&a76b73f1ca4b5bbdfa08c9ff60675d3b6;
-&a3756cfa581f8a9211c03ebe1ca773d6f;
-&a6ea66071058c04c71d53f054210a5a8b;
-&a58069569181c8ded04eaf96cc7aca6dd;
-&ad47bf10b98ec861a9ae3087f7e9a3d80;
-<chapter xml:id='section_5de4b35e2a72740b2d5477a79ad72d19'>
+&ac222d84ebbf9569418008cc186599720;
+&a8a06133d30c53a074347baae450615aa;
+&ac1e1527a10c912e769f8031255868119;
+&ac0eb17a050862944ddd02c15e46d5000;
+&a28de84a6deec4b0b5c72c351575599a0;
+&aecce91e19ac32dbcbe0e9c7885c70686;
+&a4938bfb4aef71a62c0d705e6fbc6628e;
+&a75bfa214155f5a3034a26a92df35b750;
+&a0663c479c4a611bd139fdc0800feb739;
+&a99fa0a61fe65c82077e3b6758d8cf015;
+&ad7db98ad06686249e4bcc70b79be79c4;
+&a7826b794e53d9d3293fd7345bf6e3af4;
+<chapter xml:id='section_a69b0aa65989af9db4fe78d9e8206297'>
 <title>Symphony Native Functions</title>
-&a13de76afe3b5c2d0b3f8ea8e0a3dd08e;
-&ab0390ba610afb8f9910257651b6127dc;
-&a719afab4ea4beef8c7c4b1a1edff4b5d;
-&ada2e8f5591a904c36974a842fc0ef298;
-&a78793b9c9d3e26576697d1889dca7123;
-&a64a94ee786e6d55c998096d7f530b62e;
-&a352c5188af2c66de613397b2c108d410;
-&ad8d527ecac84612cac234f4fe820fae7;
-&a45f1a7429f8b8f3acab98a0a4f2d8500;
-&a8cd41f1e239e7c254fd4ad6199675f52;
-&af371a97897bca9227ddf0b255b55e2a3;
-&a942dab352ceb24cd2abe69855de78d59;
-&ad76a497582e7acfbb1ea64c7ba7fa000;
-&a65495d0f71d3816fe61629c1d080fcd4;
-&ae30ddf6f4b2e25466090151a422ab812;
-&a7171e89a4c00456efab773f03e3f9049;
-&a8c178977215671c68bd81579465e5260;
-&a4577c23788738bc4b2b9fa7aaefeef4f;
-&a83c19028524250a070d975ee8c7cf97a;
-&a77bb465667e90f7268e378c5728c64dd;
-&a46bab685bda0889b0cf669e6143437a7;
-&a88c3c27ee52e7357167b8ec048715179;
-&a4f98d707d4298654c3c4eeac9a8b6f0c;
-&a40e1551f024f7eadd1241a4b52a6d659;
-&a208aa41cad211d98bb4fe9358449337a;
-&a0f249667fe906ed62cfe394296974465;
-&adc19a276483993422aa038c1b2132495;
-&a00953e66bf4aef61f6b6b43280c50596;
-&a026ce7878cd3c99c48b4542357b33a41;
-&ab6873195bbc7c0ebf92daa44e9a2d5d6;
-&a30b54019f094f2997fdd38015b256593;
-&a42df6b115b51a60e111655933e627413;
-&a9ee4ef2493cd384b82982dab6cf90665;
-&aaea82f3cde3dfe832010a912f6df59b1;
-&ac3ca5984e1e5f6f796faa3aaeb7bd5c0;
-&a5916338e4dbd097dc20ca7787207ca09;
-&a8be49e94c83d005d42774ba9e8c886ca;
-&acc4d6cc54b7eb2e4474d107fc4817f12;
-&a9aab966caec55c30352cfe869ff12082;
-&a73e01cd76ee14c201ac0f2d20572a68f;
-&a443f260ade97d4b8121969ff07a5d58c;
-&aa8da4846ca276a44e43bddb55c4cb719;
-&a65fc7bb4e1025a7f26a41c84906e8f5b;
-&aaf9f87e80522d0271fdc4b5a5f4b87a8;
-&ae5d88877c03a7dd8f5dedd4cdb44bb2d;
-&aa58e5af001a750ec656986ff6607a796;
-&a65b03d7ba5c9e56ba6b2d89813fbe009;
-&a518d286bb113c4964a7a48cdbc0d8817;
-&aff673dc84f17566670176dd60931d7ad;
-&a57c41f201559e79560b802c541484ede;
-&a048729d3d19d52728a0045ac330a934e;
-&ade6001496ab7c18c677fd4836926009a;
-&a00abbeb11bc9d949b732423be5d9c549;
-&af50ba4e3b9c04bfe029b3ab18c30bb30;
-&ae9b9ccb70c0f1866f18a7479dbf834da;
-&ae144802e5cbdc335fc8b14f880862000;
-&a3debab8f1b5b68b568ee0cf418a8b8f0;
-&a9a348d464dc2839a7dc3c96eb3a49a4c;
+&af9889d4d82d614ffb2228873727ae7fc;
+&a9e714f002b8f770838d5ff39815cf824;
+&a9f1ec895c2cfd92f863fe52c3059ec9c;
+&ab1aab73e20e608bdb83aa3c831ce21d3;
+&aff37e812328d06bbf4e8372ce4e0b413;
+&a21bfd37b4cf8b12c0fc1c2fe31544250;
+&a7b668683ab2c4a527a33dfc614667b67;
+&ab828a1daca6403f345c241660c8871d6;
+&a6119e0fcde8d6db54559b3c3dcfad0f4;
+&a8b59cb516ead31cb1d8658e4ea946da1;
+&aea238954434eddf45147df658de44a72;
+&a5631dee0b479276c27a273beed20e9be;
+&abdc73fd17be2539db66026c8a30f783f;
+&a56773797544f5d53159157605db7e751;
+&a6c8c4d563f6c12f9b2e5d50f7456aaf0;
+&aaf38f31d408577658cbe4853cfdaad0b;
+&ac6046fe9e6f9f75c9697e76a34cce2ac;
+&afa6774bb9d538cd64accf22b0d8de38c;
+&aa87e3ac32fc9fd4f99e3f55f11d6edc6;
+&a64c40f78b538f22661a4b3a58d409611;
+&a3219e27f1f9f3d0e8706585e358fbdd4;
+&acbb8fcddad7005e2e827e9c742158215;
+&a3ec304d90d2e6e4cba96b998362bb1b4;
+&aa294b4ca432485a7257ccb628c9cf3cf;
+&a87177b629bb870c4530ec848096218d0;
+&a2af74fac363f7307cce56d667617b215;
+&ab014a8a3e97f606f6aa5ec34fb9addce;
+&a0890bf3462f3bbfdd1d2f706353e6b71;
+&aa47f7237860dbff8208c9b10515adbad;
+&a0cd75524805301c479f25f2fe0e939bd;
+&ad84c516b52059f8e17320d249e46c684;
+&a14f6070c8a036c693c4b2e3ce2492279;
+&a728983ec0c43df15dbc7421b760b8031;
+&a0aa156af51f136ebae1956d00df9661d;
+&a94da2eb036eeba9522f89a3f320a4882;
+&a49ab2cd10b4bc51974550fc7b05fd570;
+&ab4717f97b14e0bc67b936564aa505ad8;
+&a5f0134cc8044917a0c396fd88d2d95c8;
+&aa1c5aa3f6a4aefa6e4f160476d72a1c8;
+&ae9e0b601c2cfb4f09367c1755b2bc5b6;
+&aa492d138cb247ffe64bb1c024098bf08;
+&a61781530c57d8ac6b218fddca29f6ea9;
+&a5cd5f48c98f9650b60d9b465a695451d;
+&aa11cefc47a81a180dad6da798f863c65;
+&ab27a53ddf8fff9fb6418369e27b435ad;
+&af710238176bc6f27ff5e6b7b44ce64a0;
+&af0c39afb036f1e5ebb0a6f10eeb6addd;
+&a76364466ebaf39a07a53712fef270bf1;
+&afbf8293befa2d9ee7192ec0d97902e6f;
+&a67ac82d3f062eac12355b3b210709c8b;
+&a3643c422fb0c07b8db8b9cbdb36f7302;
+&a38f6aad99d55b0010602cb39bd28aa8b;
+&a9c6f1eb7ebb613d5609b1ea39ff0ef01;
+&a0edecf2158e8474bf7892f9044856233;
+&a0a4ff2084c62d4ee21e2927890e78ded;
+&a869bde1f9eb2748984045e306d6f3606;
+&ac73405bedf21babde8716105dcd48c33;
+&a32ee0832e1c29f24ddd6541d2d6bf3d3;
 </chapter>
 </part>
 </book>

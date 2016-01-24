@@ -39,13 +39,11 @@ int sci_solveminconp(char *fname)
 	//Function pointers, input matrix(Starting point) pointer, flag variable 
 	int* funptr=NULL;
 	int* gradhesptr=NULL;
-	double *x0ptr=NULL, *lbptr=NULL, *ubptr=NULL,*Aptr=NULL, *bptr=NULL, *Aeqptr=NULL, *beqptr=NULL;
-	static unsigned double flag1=0,flag2=0,flag3=0,nonlinCon=0,nonlinIneqCon=0;
+	double *x0ptr=NULL, *lbptr=NULL, *ubptr=NULL,*Aptr=NULL, *bptr=NULL, *Aeqptr=NULL, *beqptr=NULL,*cpu_time=NULL,*max_iter=NULL;
+	static unsigned int flag1=0,flag2=0,flag3=0,nonlinCon=0,nonlinIneqCon=0, nVars = 0,nCons = 0;
         
 
-    	// Input arguments
-	double *cpu_time=NULL,*max_iter=NULL;
-	static unsigned int nVars = 0,nCons = 0;
+   	// Input arguments
 	unsigned int temp1 = 0,temp2 = 0, iret = 0;
 	unsigned int x0_rows=0, x0_cols=0, lb_rows=0, lb_cols=0, ub_rows=0, ub_cols=0, A_rows=0, A_cols=0, b_rows=0, b_cols=0, Aeq_rows=0, Aeq_cols=0, beq_rows=0, beq_cols=0;
 	
@@ -129,30 +127,30 @@ int sci_solveminconp(char *fname)
 	}
 
 	//Number of non-linear constraints
-	if(getDoubleFromScilab(9, &nonlinCon))
+	if(getIntFromScilab(9, &nonlinCon))
 	{
 		return 1;
 	}
 
 	//Number of non-linear inequality constraints
-	if(getDoubleFromScilab(10, &nonlinIneqCon))
+	if(getIntFromScilab(10, &nonlinIneqCon))
 	{
 		return 1;
 	}
 
 	//Getting the required flag variables
 
-	if(getDoubleFromScilab(12, &flag1))
+	if(getIntFromScilab(12, &flag1))
 	{
 		return 1;
 	}
 
-	if(getDoubleFromScilab(14, &flag2))
+	if(getIntFromScilab(14, &flag2))
 	{
 		return 1;
 	}
 
-	if(getDoubleFromScilab(16, &flag3))
+	if(getIntFromScilab(16, &flag3))
 	{
 		return 1;
 	}
@@ -161,7 +159,9 @@ int sci_solveminconp(char *fname)
 	nVars = x0_cols;
 	nCons = A_rows + Aeq_rows + nonlinCon;
 
-        
+ 
+
+
         // Starting Ipopt
 
 	SmartPtr<minconNLP> Prob = new minconNLP(nVars, nCons, x0ptr, Aptr, bptr, Aeqptr, beqptr, A_rows, A_cols, b_rows, b_cols, Aeq_rows, Aeq_cols, beq_rows, beq_cols, lbptr, ubptr, nonlinCon, nonlinIneqCon, flag1, flag2, flag3);
@@ -192,11 +192,22 @@ int sci_solveminconp(char *fname)
 	 app->Statistics()->Infeasibilities(dual_inf, constr_viol, complementarity, kkt_error);
 	 rstatus = Prob->returnStatus();
 	 fobj_eval=(double)int_fobj_eval;
-     cout<<"obj eval address"<<&int_fobj_eval;    
-	 cout<<"double obj eval address"<<&fobj_eval;
-	 cout<<"dual inf address"<<&dual_inf;
-	 cout<<"cpu time address"<<&cpuTime;
-	 cout<<"rstatus address"<<&rstatus;
+     cout<<" max_itr address"<<&max_iter;
+     cout<<" cpu time address"<<&cpu_time;
+     cout<<" obj address"<<&funptr;
+	cout<<" gradhes address"<<&gradhesptr;
+	cout<<" x0 address"<<&x0ptr;
+	cout<<" lb address"<<&lbptr;
+	cout<<" ub address"<<&ubptr;
+	cout<<" A address"<<&Aptr;
+	cout<<" b address"<<&bptr;
+	cout<<" Aeq address"<<&Aeqptr;
+	cout<<" beq address"<<&beqptr;
+     cout<<" obj eval address"<<&int_fobj_eval;    
+	 cout<<" double obj eval address"<<&fobj_eval;
+	 cout<<" dual inf address"<<&dual_inf;
+	 cout<<" cpu time address"<<&cpuTime;
+	 cout<<" rstatus address"<<rstatus;
 	
 	
 	////////// Manage the output argument //////////
@@ -209,72 +220,85 @@ int sci_solveminconp(char *fname)
 	fZu = Prob->getZu();
 	ObjVal = Prob->getObjVal();
 	iteration = Prob->iterCount();
-	cout<<"x address"<<fX;
-	cout<<"gradient address"<<&fGrad;
-	cout<<"Hessian address"<<&fHess;
-	cout<<"Lambda address"<<&fLambda;
-	cout<<"Zl address"<<&fZl;
-	cout<<"Zu address"<<&fZu;
-	cout<<"Obj Address"<<&ObjVal;
-	cout<<"iterations address"<<&iteration;
+	cout<<" x address"<<&fX;
+	cout<<" gradient address"<<&fGrad;
+	cout<<" Hessian address"<<&fHess;
+	cout<<" Lambda address"<<&fLambda;
+	cout<<" Zl address"<<&fZl;
+	cout<<" Zu address"<<&fZu;
+	cout<<" Obj Address"<<&ObjVal;
+	cout<<" iterations address"<<&iteration;
+	
 	
 	if (returnDoubleMatrixToScilab(1, 1, nVars, fX))
 	{
+		cout<"yes1";
 		return 1;
 	}
 
 	if (returnDoubleMatrixToScilab(2, 1, 1, &ObjVal))
 	{
+		cout<"yes2";
 		return 1;
 	}
 
 	if (returnIntegerMatrixToScilab(3, 1, 1, &rstatus))
 	{
+		cout<"yes3";
 		return 1;
 	}
 
 	if (returnDoubleMatrixToScilab(4, 1, 1, &iteration))
 	{
+		cout<"yes4";
 		return 1;
 	}
 	
 	if (returnDoubleMatrixToScilab(5, 1, 1, &cpuTime))
 	{
+		cout<"yes5";
 		return 1;
 	}
 	
 	if (returnDoubleMatrixToScilab(6, 1, 1, &fobj_eval))
 	{
+		cout<"yes6";
 		return 1;
 	}
 	
 	if (returnDoubleMatrixToScilab(7, 1, 1, &dual_inf))
 	{
+		cout<"yes7";
 		return 1;
 	}
 
 	if (returnDoubleMatrixToScilab(8, 1, nCons, fLambda))
 	{
+		cout<"yes8";
 		return 1;
 	}
 
 	if (returnDoubleMatrixToScilab(9, 1, nVars, fZl))
 	{
+		cout<"yes9";
 		return 1;
 	}
 
 	if (returnDoubleMatrixToScilab(10, 1, nVars, fZu))
 	{
+		cout<"yes10";
 		return 1;
 	}
 		
 	if (returnDoubleMatrixToScilab(11, 1, nVars, fGrad))
 	{
+		cout<"yes11";
 		return 1;
 	}
 
 	if (returnDoubleMatrixToScilab(12, 1, nVars*nVars, fHess))
 	{
+		cout<"yes12";
 		return 1;
 	}
 	

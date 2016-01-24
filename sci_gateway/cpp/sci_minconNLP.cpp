@@ -31,6 +31,13 @@ using namespace Ipopt;
 
 minconNLP::~minconNLP()
 {
+	cout<<" finalX address"<<finalX_;
+	cout<<" finalGradient address"<<finalGradient_;
+	cout<<" finalHessian address"<<finalHessian_;
+	cout<<" finalZl address"<<finalZl_;
+	cout<<" finalZu address"<<finalZu_;
+	cout<<" finalLambda address"<<finalLambda_;
+	
 	free(finalX_);
 	free(finalGradient_);
 	free(finalHessian_);
@@ -68,9 +75,9 @@ bool minconNLP::get_bounds_info(Index n, Number* x_l, Number* x_u, Index m, Numb
 	}
 	
 	if(m==0)
-        {
+    {
 		g_l=NULL;
-	        g_u=NULL;
+	    g_u=NULL;
 	}
 
 	else
@@ -556,8 +563,10 @@ bool minconNLP::eval_h(Index n, const Number* x, bool new_x,Number obj_factor, I
 					sciprint("No results");
 					return 1;
 				}
-
+				
 				double* resh=(double*)malloc(sizeof(double)*n*n);
+				cout<<" resTemph Address"<<&resTemph;
+				cout<<" resh Address"<<&resh;
 				Index i;
 				for(i=0;i<numVars_*numVars_;i++)
 				{
@@ -566,6 +575,7 @@ bool minconNLP::eval_h(Index n, const Number* x, bool new_x,Number obj_factor, I
 
 				//sum of hessians of constraints each multiplied by its own lambda factor
 				double* sum=(double*)malloc(sizeof(double)*n*n);
+				cout<<" Sum Address"<<&sum;
 				if(nonlinCon_!=0)
 				{	
 					

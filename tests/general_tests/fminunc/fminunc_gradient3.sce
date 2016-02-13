@@ -1,5 +1,5 @@
 //Find x in R^2 such that:
-// Check if a user specifies correct options or not
+// Check if a user specifies correct Gradient function
 
 function y = fun(x)
 	y = x(1)^2 + x(2)^2;

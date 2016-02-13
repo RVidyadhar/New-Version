@@ -1,5 +1,5 @@
 //Find x in R^2 such that:
-// Check if a user specifies correct options for hessian
+// Check if a user specifies correct hessian function
 
 function y = fun(x)
 	y = x(1)^2 + x(2)^2;

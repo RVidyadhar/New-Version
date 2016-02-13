@@ -13,7 +13,7 @@ int getIntFromScilab(int argNum, int *dest);
 int getFixedSizeDoubleMatrixFromScilab(int argNum, int rows, int cols, double **dest);
 int getDoubleMatrixFromScilab(int argNum, int *rows, int *cols, double **dest);
 int getFixedSizeDoubleMatrixInList(int argNum, int itemPos, int rows, int cols, double **dest);
-
+int getStringFromScilab(int argNum,char** dest);
 
 //output
 int return0toScilab();

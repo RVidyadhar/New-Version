@@ -2,20 +2,20 @@
 <!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" "http://java.sun.com/products/javahelp/map_1_0.dtd">
 <map version="1.0">
 <mapID target="index" url="index.html"/>
-<mapID target="section_4130b9870f2cc3a0a8a90fa5c8f26baf" url="section_4130b9870f2cc3a0a8a90fa5c8f26baf.html"/>
+<mapID target="section_01fb7d6e63bf962a31e3a14e01a33367" url="section_01fb7d6e63bf962a31e3a14e01a33367.html"/>
+<mapID target="fgoalattain" url="fgoalattain.html"/>
 <mapID target="fminbnd" url="fminbnd.html"/>
 <mapID target="fmincon" url="fmincon.html"/>
+<mapID target="fminimax" url="fminimax.html"/>
 <mapID target="fminunc" url="fminunc.html"/>
+<mapID target="linprog" url="linprog.html"/>
 <mapID target="lsqlin" url="lsqlin.html"/>
+<mapID target="lsqnonneg" url="lsqnonneg.html"/>
 <mapID target="qpipopt" url="qpipopt.html"/>
-<mapID target="qpipopt_mat" url="qpipopt_mat.html"/>
 <mapID target="qpipoptmat" url="qpipoptmat.html"/>
-<mapID target="setOptions" url="setOptions.html"/>
 <mapID target="symphony" url="symphony.html"/>
-<mapID target="symphony_call" url="symphony_call.html"/>
-<mapID target="symphony_mat" url="symphony_mat.html"/>
 <mapID target="symphonymat" url="symphonymat.html"/>
-<mapID target="section_a69b0aa65989af9db4fe78d9e8206297" url="section_a69b0aa65989af9db4fe78d9e8206297.html"/>
+<mapID target="section_46306c7c0c0d36173e2803020fbc0d70" url="section_46306c7c0c0d36173e2803020fbc0d70.html"/>
 <mapID target="sym_addConstr" url="sym_addConstr.html"/>
 <mapID target="sym_addVar" url="sym_addVar.html"/>
 <mapID target="sym_close" url="sym_close.html"/>

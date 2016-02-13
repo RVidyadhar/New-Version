@@ -7,9 +7,8 @@
 #include "sciprint.h"
 #include "BOOL.h"
 #include <localization.h>
-#include <iostream>
-using namespace std;
 
+using namespace std;
 
 int getFunctionFromScilab(int argNum, int **dest)
 {	
@@ -172,18 +171,18 @@ int getDoubleMatrixFromScilab(int argNum, int *rows, int *cols, double **dest)
 	sciErr = getVarAddressFromPosition(pvApiCtx, argNum, &varAddress);
 	if (sciErr.iErr)
 	{
-		//printError(&sciErr, 0);
+		printError(&sciErr, 0);
 		return 1;
 	}
 	if ( !isDoubleType(pvApiCtx,varAddress) ||  isVarComplex(pvApiCtx,varAddress) )
 	{
-		//Scierror(errNum,errMsg,argNum);
+		Scierror(errNum,errMsg,argNum);
 		return 1;
 	}
 	getMatrixOfDouble(pvApiCtx, varAddress, rows, cols, dest);
 	if (sciErr.iErr)
 	{
-		//printError(&sciErr, 0);
+		printError(&sciErr, 0);
 		return 1;
 	}
 	return 0;
@@ -210,6 +209,28 @@ int getFixedSizeDoubleMatrixInList(int argNum, int itemPos, int rows, int cols, 
 		return 1;
 	}
 	return 0;
+}
+
+int getStringFromScilab(int argNum,char **dest)
+{
+	int *varAddress,inputMatrixRows,inputMatrixCols;
+	SciErr sciErr;
+	sciErr = getVarAddressFromPosition(pvApiCtx, argNum, &varAddress);
+
+	//check whether there is an error or not.
+	if (sciErr.iErr)
+    	{
+        	printError(&sciErr, 0);
+        	return 1;
+		}
+	if ( !isStringType(pvApiCtx,varAddress) )
+		{
+			Scierror(999,"Wrong type for input argument 1: A file name is expected.\n");
+			return 1;
+		}
+    //read the value in that pointer pointing to file name
+	getAllocatedSingleString(pvApiCtx, varAddress, dest);
+    
 }
 
 int return0toScilab()
@@ -277,4 +298,5 @@ int returnIntegerMatrixToScilab(int itemPos, int rows, int cols, int *dest)
 
 	return 0;
 }
+
 

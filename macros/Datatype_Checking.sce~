@@ -1,5 +1,0 @@
-function []=checkfunction[func,string1,string2,pos]
-		if (type(func) ~= 13 & type(func) ~= 11) then
-   		errmsg = msprintf(gettext("%s: Expected function for %s (%dst Parameter)"), string1,string2,pos);
-   		error(errmsg);
-end

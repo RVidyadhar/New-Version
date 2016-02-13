@@ -1,11 +1,13 @@
-/*
- * Quadratic Programming Toolbox for Scilab using IPOPT library
- * Authors :
-	Sai Kiran
-	Keyur Joshi
-	Iswarya
-	Harpreet Singh
- */
+// Copyright (C) 2015 - IIT Bombay - FOSSEE
+//
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Author: Harpreet Singh, Sai Kiran, Keyur Joshi, Iswarya
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
 
 #include "sci_iofunc.hpp"
 #include "IpIpoptApplication.hpp"
@@ -168,7 +170,7 @@ int sci_solveqp(char *fname)
 
 	////////// Manage the output argument //////////
 
-	if (rstatus == 0 | rstatus == 1 | rstatus == 2){
+	if (rstatus >= 0 | rstatus <= 7){
 		fX = Prob->getX();
 		ObjVal = Prob->getObjVal();
 		iteration = Prob->iterCount();
@@ -233,7 +235,7 @@ int sci_solveqp(char *fname)
 			return 1;
 		}
 
-		if (returnDoubleMatrixToScilab(7, 1, 1, Lambda))
+		if (returnDoubleMatrixToScilab(7, 1, nCons, Lambda))
 		{
 			return 1;
 		}

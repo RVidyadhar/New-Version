@@ -1,0 +1,18 @@
+//Objective function to be minimised
+function y=fun(x)
+y=1+x(1)/(1+x(2)) - 3*x(1)*x(2) + x(2)*(1+x(1));
+endfunction
+//Starting point, linear constraints and variable bounds
+lb = [0,0];
+ub = [1,2];
+A = [];
+b = [];
+Aeq = [];
+beq = [];
+x0 = [0.5,1];
+x0=x0/2;
+//exec builder.sce;
+//exec loader.sce;
+
+//Calling Ipopt
+[x,fval,exitflag,output,lambda,grad,hessian] =fmincon(fun,x0,A,b,Aeq,beq,lb,ub)

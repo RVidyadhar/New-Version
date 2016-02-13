@@ -1,21 +1,23 @@
 // Copyright (C) 2015 - IIT Bombay - FOSSEE
 //
-// Author: Keyur Joshi, Sai Kiran, Iswarya and Harpreet Singh
-// Organization: FOSSEE, IIT Bombay
-// Email: harpreet.mertia@gmail.com
 // This file must be used under the terms of the CeCILL.
 // This source file is licensed as described in the file COPYING, which
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Author: Harpreet Singh
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
 
 mode(-1)
 lines(0)
 
-toolbox_title = "FAMOS";
+toolbox_title = "FOSSEE_Optimization_Toolbox";
 
 [a, opt] = getversion();
 Version = opt(2);
+
+Build_64Bits = %f;
 
 path_builder = get_absolute_file_path('builder_gateway_cpp.sce');
 
@@ -23,7 +25,7 @@ tools_path  = path_builder + "../../thirdparty/linux/";
 
 C_Flags=["-D__USE_DEPRECATED_STACK_FUNCTIONS__ -w -fpermissive -I"+tools_path+"include/coin -Wl,-rpath="+tools_path+"lib/"+Version+filesep()+" "]
 
-Linker_Flag = ["-L"+tools_path+"lib/"+Version+filesep()+"libSym"+" "+"-L"+tools_path+"lib/"+Version+filesep()+"libipopt" ]
+Linker_Flag = ["-L"+tools_path+"lib/"+Version+filesep()+"libSym"+" "+"-L"+tools_path+"lib/"+Version+filesep()+"libipopt"+" "+"-L"+tools_path+"lib/"+Version+filesep()+"libClp"+" "+"-L"+tools_path+"lib/"+Version+filesep()+"libOsiClp"+" "+"-L"+tools_path+"lib/"+Version+filesep()+"libCoinUtils" ]
 
 
 //Name of All the Functions
@@ -108,6 +110,10 @@ Function_Names = [
 		"sym_getIterCount","sci_sym_get_iteration_count";
 		"sym_getConstrActivity","sci_sym_getRowActivity";
 
+		//Linprog function
+		"linearprog","sci_linearprog"
+        "rmps","sci_rmps"
+
 		//QP function
 		"solveqp","sci_solveqp"
 
@@ -145,18 +151,21 @@ Files = [
 		"sci_sym_remove.cpp",
 		"sci_QuadNLP.cpp",
 		"QuadNLP.hpp",
-		"sci_ipopt.cpp"
-		"minuncNLP.hpp"
-		"sci_minuncNLP.cpp"
-		"sci_ipoptfminunc.cpp"
-		"minbndNLP.hpp"
-		"sci_minbndNLP.cpp"
-		"sci_ipoptfminbnd.cpp"
-		"minconNLP.hpp"
-		"sci_minconNLP.cpp"
-		"sci_ipoptfmincon.cpp"
-		
-				
+		"sci_ipopt.cpp",
+		"minuncNLP.hpp",
+		"sci_minuncNLP.cpp",
+		"sci_ipoptfminunc.cpp",
+		"minbndNLP.hpp",
+		"sci_minbndNLP.cpp",
+		"sci_ipoptfminbnd.cpp",
+		"minconNLP.hpp",
+		"sci_minconNLP.cpp",
+		"sci_ipoptfmincon.cpp",
+		"sci_ipopt.cpp",
+		"sci_LinProg.cpp",
+        "sci_LinCLP.cpp",
+        "LinCLP.hpp",
+        "read_mps.cpp"
 	]
 
 tbx_build_gateway(toolbox_title,Function_Names,Files,get_absolute_file_path("builder_gateway_cpp.sce"), [], Linker_Flag, C_Flags, [], "g++");

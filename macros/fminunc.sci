@@ -75,6 +75,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
 	//   <listitem>output.Cpu_Time: The total cpu-time spend during the search</listitem>
 	//   <listitem>output.Objective_Evaluation: The number of Objective Evaluations performed during the search</listitem>
 	//   <listitem>output.Dual_Infeasibility: The Dual Infeasiblity of the final soution</listitem>
+	//	 <listitem>output.Message: The output message for the problem</listitem>
 	// </itemizedlist>
 	//
   	// Examples
@@ -98,6 +99,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
   	//     options=list("MaxIter", [1500], "CpuTime", [500], "Gradient", fGrad, "Hessian", fHess);
   	//     //Calling Ipopt
   	//     [xopt,fopt,exitflag,output,gradient,hessian]=fminunc(f,x0,options)
+	// // Press ENTER to continue
   	//
   	// Examples
   	//      //Find x in R^2 such that the below function is minimum
@@ -110,6 +112,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
   	//      x0=[2,1];
   	//      //Calling Ipopt  
   	//      [xopt,fopt]=fminunc(f,x0)
+	// // Press ENTER to continue
   	//
   	// Examples
   	//     //The below problem is an unbounded problem:
@@ -133,7 +136,6 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
   	//     options=list("MaxIter", [1500], "CpuTime", [500], "Gradient", fGrad, "Hessian", fHess);
   	//    //Calling Ipopt  
   	//     [xopt,fopt,exitflag,output,gradient,hessian]=fminunc(f,x0,options)
-  	//
   	// Authors
   	// R.Vidyadhar , Vignesh Kannan
     
@@ -142,7 +144,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
    	[lhs , rhs] = argn();
 	
 	//To check the number of arguments given by the user
-   	if ( rhs<2 | rhs>5 ) then
+   	if ( rhs<2 | rhs>3 ) then
     		errmsg = msprintf(gettext("%s: Unexpected number of input arguments : %d provided while should be 2 or 5"), "fminunc", rhs);
     		error(errmsg)
    	end
@@ -151,8 +153,8 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
    	fun = varargin(1);
    	x0 = varargin(2);
       
-	//To check whether the 1st Input argument(f) is a function or not
-   	if (type(f) ~= 13 & type(f) ~= 11) then
+	//To check whether the 1st Input argument(fun) is a function or not
+   	if (type(fun) ~= 13 & type(fun) ~= 11) then
    		errmsg = msprintf(gettext("%s: Expected function for Objective "), "fminunc");
    		error(errmsg);
    	end
@@ -165,7 +167,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
    
 	//To check and convert the 2nd Input argument(x0) to a row vector 
    	if((size(x0,1)~=1) & (size(x0,2)~=1)) then
-   		errmsg = msprintf(gettext("%s: Expected Row Vector or Column Vector for x0 (Initial Value) "), "fminunc", rhs);
+   		errmsg = msprintf(gettext("%s: Expected Row Vector or Column Vector for x0 (Initial Value) "), "fminunc");
    		error(errmsg);
    	else
    		if(size(x0,2)==1) then
@@ -263,24 +265,51 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
  
 	//To check the user entry for options and store it
    	for i = 1:(size(param))/2
-       	select param(2*i-1)
-    		case "MaxIter" then
-          			options(2*i) = param(2*i);    //Setting the maximum number of iterations as per user entry
-       		case "CpuTime" then
-          			options(2*i) = param(2*i);    //Setting the maximum CPU time as per user entry
-        	case "Gradient" then
-					flag1 = 1;
-        			fGrad = param(2*i);        				      
-        	case "Hessian" then
-        			flag2 = 1;
-        			fHess = param(2*i);
+       	select convstr(param(2*i-1),'l')
+    		case "maxiter" then
+          			if (type(param(2*i))~=1) then
+          				errmsg = msprintf(gettext("%s: Value for Maximum Iteration should be a Constant"), "fminunc");
+    	      			error(errmsg);
+          			else
+          				options(2*i) = param(2*i);    //Setting the maximum number of iterations as per user entry
+          			end
+       		case "cputime" then
+          			if (type(param(2*i))~=1) then
+          				errmsg = msprintf(gettext("%s: Value for Maximum Cpu-time should be a Constant"), "fminunc");
+    	      			error(errmsg);
+          			else
+          				options(2*i) = param(2*i);    //Setting the maximum CPU time as per user entry
+          			end
+        	case "gradient" then
+					if (type(param(2*i))==10) then
+        				if (convstr(param(2*i))=="off") then
+        					flag1 =0;
+        				else
+        					errmsg = msprintf(gettext("%s: Unrecognized String [%s] entered for the option- %s."), "fminunc",param(2*i), param(2*i-1));
+    	      				error(errmsg);
+        				end
+        			else
+						flag1 = 1;
+        				fGrad = param(2*i);
+        			end       				      
+        	case "hessian" then
+        			if (type(param(2*i))==10) then
+        				if (convstr(param(2*i))=="off") then
+        					flag2 =0;
+        				else
+        					errmsg = msprintf(gettext("%s: Unrecognized String [%s] entered for the option- %s."), "fminunc",param(2*i), param(2*i-1));
+    	      				error(errmsg);
+        				end
+        			else
+        				flag2 = 1;
+        				fHess = param(2*i);
+        			end
         	else
-    	     	 	errmsg = msprintf(gettext("%s: Unrecognized parameter name %s."), "fminbnd", param(2*i-1));
+    	     	 	errmsg = msprintf(gettext("%s: Unrecognized parameter name %s."), "fminunc", param(2*i-1));
     	      		error(errmsg)      	
     		end
    	end
    
-	
   //To check for correct input of Gradient and Hessian functions from the user	     	
    if (flag1==1) then
    		if (type(fGrad) ~= 13 & type(fGrad) ~= 11) then
@@ -297,8 +326,8 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
 		
 		if (size(samplefGrad,1)==s(2) & size(samplefGrad,2)==1) then
 		elseif (size(samplefGrad,1)==1 & size(samplefGrad,2)==s(2)) then
-		elseif (size(samplefGrad,1)~=1 & size(samplefGrad,2)~=1) then
-   			errmsg = msprintf(gettext("%s: Wrong Input for Objective Gradient function(3rd Parameter)---->Row Vector function is Expected"), "fminunc");
+		else
+   			errmsg = msprintf(gettext("%s: Wrong Input for Objective Gradient function(3rd Parameter)---->Row Vector function of size [1 X %d] is Expected"), "fminunc",s(2));
    			error(errmsg);
    		end
    		
@@ -331,7 +360,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
 		samplefHess=fHess(x0);
 		
    		if(size(samplefHess,1)~=s(2) | size(samplefHess,2)~=s(2)) then
-   			errmsg = msprintf(gettext("%s: Wrong Input for Objective Hessian function(3rd Parameter)---->Symmetric Matrix function is Expected "), "fminunc");
+   			errmsg = msprintf(gettext("%s: Wrong Input for Objective Hessian function(3rd Parameter)---->Symmetric Matrix function of size [%d X %d] is Expected "), "fminunc",s(2),s(2));
    			error(errmsg);
    		end
    		
@@ -357,7 +386,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
 	//Calculating the values for output
    	xopt = xopt';
    	exitflag = status;
-   	output = struct("Iterations", [],"Cpu_Time",[],"Objective_Evaluation",[],"Dual_Infeasibility",[]);
+   	output = struct("Iterations", [],"Cpu_Time",[],"Objective_Evaluation",[],"Dual_Infeasibility",[],"Message","");
    	output.Iterations = iter;
     	output.Cpu_Time = cpu;
     	output.Objective_Evaluation = obj_eval;
@@ -376,7 +405,7 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
 	if( status~=0 & status~=1 & status~=2 & status~=3 & status~=4 & status~=7 ) then
 		xopt=[]
 		fopt=[]
-		output = struct("Iterations", [],"Cpu_Time",[]);
+		output = struct("Iterations", [],"Cpu_Time",[],"Message","");
 		output.Iterations = iter;
     		output.Cpu_Time = cpu;
     		gradient=[]
@@ -389,38 +418,54 @@ function [xopt,fopt,exitflag,output,gradient,hessian] = fminunc (varargin)
     
     	case 0 then
         	printf("\nOptimal Solution Found.\n");
+        	output.Message="Optimal Solution Found";
     	case 1 then
         	printf("\nMaximum Number of Iterations Exceeded. Output may not be optimal.\n");
+        	output.Message="Maximum Number of Iterations Exceeded. Output may not be optimal";
     	case 2 then
        		printf("\nMaximum CPU Time exceeded. Output may not be optimal.\n");
+       		output.Message="Maximum CPU Time exceeded. Output may not be optimal";
     	case 3 then
         	printf("\nStop at Tiny Step\n");
+        	output.Message="Stop at Tiny Step";
     	case 4 then
         	printf("\nSolved To Acceptable Level\n");
+        	output.Message="Solved To Acceptable Level";
     	case 5 then
         	printf("\nConverged to a point of local infeasibility.\n");
+        	output.Message="Converged to a point of local infeasibility";
     	case 6 then
         	printf("\nStopping optimization at current point as requested by user.\n");
+        	output.Message="Stopping optimization at current point as requested by user";
     	case 7 then
         	printf("\nFeasible point for square problem found.\n");
+        	output.Message="Feasible point for square problem found";
     	case 8 then 
         	printf("\nIterates diverging; problem might be unbounded.\n");
+        	output.Message="Iterates diverging; problem might be unbounded";
     	case 9 then
         	printf("\nRestoration Failed!\n");
+        	output.Message="Restoration Failed!";
     	case 10 then
         	printf("\nError in step computation (regularization becomes too large?)!\n");
-    	case 12 then
+        	output.Message="Error in step computation (regularization becomes too large?)!";
+    	case 11 then
         	printf("\nProblem has too few degrees of freedom.\n");
-    	case 13 then
+        	output.Message="Problem has too few degrees of freedom";
+    	case 12 then
         	printf("\nInvalid option thrown back by Ipopt\n");
-    	case 14 then
+        	output.Message="Invalid option thrown back by Ipopt";
+    	case 13 then
         	printf("\nNot enough memory.\n");
+        	output.Message="Not enough memory";
     	case 15 then
         	printf("\nINTERNAL ERROR: Unknown SolverReturn value - Notify Ipopt Authors.\n");
+        	output.Message="INTERNAL ERROR: Unknown SolverReturn value - Notify Ipopt Authors";
     	else
         	printf("\nInvalid status returned. Notify the Toolbox authors\n");
+        	output.Message="Invalid status returned. Notify the Toolbox authors";
         	break;
-    	end
+        end
     	
 
 endfunction
